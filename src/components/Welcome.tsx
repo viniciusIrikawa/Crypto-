@@ -1,5 +1,7 @@
 import React from 'react'
-import CryptoCard from './CryptoLabel'
+import BitcoinLabel from './cryptos/BitcoinLabel'
+import EthereumLabel from './cryptos/EthereumLabel'
+import TetherLabel from './cryptos/TetherLabel'
 
 const Welcome = () => {
   return (
@@ -13,7 +15,9 @@ const Welcome = () => {
 
         <div className='relative w-1/2 ml-20 flex items-center justify-center'>
           <img src="/blockchain-vector.png" alt="" width={650} className='z-10'/>
-          <CryptoCard/>
+          <BitcoinLabel/>
+          <EthereumLabel/>
+          <TetherLabel/>
         </div>
     </div>
   )
