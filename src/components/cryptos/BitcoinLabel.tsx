@@ -1,5 +1,3 @@
-import React from 'react'
-
 const BitcoinLabel = () => {
   return (
     <article className='bg-white-low flex items-center justify-center max-w-[120px] py-2 px-5 rounded-md absolute top-40 left-20 z-20 shadow-lg shadow-[#000000b3]'>

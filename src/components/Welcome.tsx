@@ -1,4 +1,3 @@
-import React from 'react'
 import BitcoinLabel from './cryptos/BitcoinLabel'
 import EthereumLabel from './cryptos/EthereumLabel'
 import TetherLabel from './cryptos/TetherLabel'
