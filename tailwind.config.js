@@ -6,11 +6,14 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'img-home': "url('/bg-homepage.jpg')"
+      },
       backgroundColor: {
         'purple': '#b743ff',
       },
       colors: {
-        'white-low': '#e6e6e6',
+        'white-low': '#e5e5e5',
         'crypto-purple': '#b743ff',
       }
     },
