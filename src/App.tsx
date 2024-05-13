@@ -1,4 +1,5 @@
 import './App.css';
+import CryptoListings from './components/CryptoListings';
 import Navbar from './components/Navbar';
 import PriceTracker from './components/PriceTracker';
 import Welcome from './components/Welcome';
@@ -6,10 +7,15 @@ import Welcome from './components/Welcome';
 function App() {
   return (
     <>
-    <div className='bg-img-home bg-cover bg-center from-black'>
-      <Navbar/>
-      <Welcome/>
-      <PriceTracker/>
+    <div className=''>
+      <section className='bg-img-home bg-cover bg-center'>
+        <Navbar/>
+        <Welcome/>
+      </section>
+      <section>
+        <CryptoListings/>
+      </section>
+      {/* <PriceTracker/> */}
     </div>
     </>
   )
