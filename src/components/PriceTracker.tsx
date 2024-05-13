@@ -1,34 +1,47 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import { cryptoList } from '../constants/constants';
 
 const PriceTracker = () => {
-    const [price, setPrice] = useState<number | undefined>();
+    const [prices, setPrices] = useState<{ [pair: string]: number }>({});
 
-  useEffect(() => {
-    const ws = new WebSocket(`wss://stream.binance.com:9443/ws/btcusdt@trade`);
-    ws.onopen = () => {
-        console.log('Connected');
+    const subscribe = (pairs: string[]) => {
+        const sockets: { [pair: string]: WebSocket } = {};
+
+        pairs.forEach(pair => {
+            const ws = new WebSocket(`wss://stream.binance.com:9443/ws/${pair.toLowerCase()}@trade`);
+    
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                setPrices(prevPrices => ({
+                    ...prevPrices,
+                    [pair]: parseFloat(data.p)
+                }));
+            }
+            
+            sockets[pair] = ws;
+        });
+
+        return () => {
+            Object.values(sockets).forEach(ws => {
+                ws.close();
+            });
+        };
     }
 
-    ws.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        setPrice(parseFloat(data.p))
-    }
+    useEffect(() => {
+        const unsubscribe = subscribe(cryptoList);
+        return unsubscribe;
+    }, []);
 
-    ws.onclose = () => {
-        console.log('WebSocket disconnected');
-      };
-
-      return () => {
-        ws.close();
-    };
-
-  }, []);
-
-  return (
-    <div className='text-white font-bold'>
-        {price?.toFixed(2)}
-    </div>
-  )
+    return (
+        <div className='text-white font-bold'>
+            {Object.entries(prices).map(([pair, price]) => (
+                <div key={pair}>
+                    {pair}: {price?.toFixed(2)}
+                </div>
+            ))}
+        </div>
+    );
 }
 
-export default PriceTracker
+export default PriceTracker;
