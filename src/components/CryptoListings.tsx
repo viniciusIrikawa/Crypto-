@@ -37,8 +37,8 @@ const CryptoListings = () => {
   }, []);
 
   return (
-    <div className="h-[80vh] text-white py-20 px-10">
-      <h1 className="text-3xl font-bold "> Crypto Listings </h1>
+    <div className="h-[80vh] py-20 px-10">
+      <h1 className="text-3xl text-white-low font-bold "> Crypto Listings </h1>
       <Table prices={prices}/>
     </div>
   );
