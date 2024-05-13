@@ -1,7 +1,6 @@
 import './App.css';
 import CryptoListings from './components/CryptoListings';
 import Navbar from './components/Navbar';
-import PriceTracker from './components/PriceTracker';
 import Welcome from './components/Welcome';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
       <section>
         <CryptoListings/>
       </section>
-      {/* <PriceTracker/> */}
     </div>
     </>
   )
