@@ -16,7 +16,7 @@ const Table = ({ prices }: { prices: Prices }) => {
             {Object.entries(prices).map(([pair, price]) => (
                 <tr key={pair}>
                     <td className="py-2"> {pair} </td>
-                    <td className="py-2"> $ {price} </td>
+                    <td className="py-2"> $ {price.toFixed(2)} </td>
                 </tr>
             ))}
         </tbody>
