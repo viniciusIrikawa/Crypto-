@@ -1,35 +1,47 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import Table from "./Table";
+import { cryptoList } from "../constants/constants";
 
 const CryptoListings = () => {
-  return (
-    <div className='h-[80vh] text-white py-20 px-10'>
-        <h1 className='text-3xl font-bold '> Crypto Listings </h1>
-        <div className='my-20 h-full flex flex-row items-start justify-center'>
-            <table className='border-[2px] border-white-low w-[40vw] text-white-low'>
-                <thead className='bg-white-low text-black'>
-                    <tr>
-                        <th> Cryptocurrency </th>
-                        <th> Mark Price </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td className='px-10 py-2'> Bitcoin </td>
-                        <td className='px-10 py-2'> 123 </td>
-                    </tr>
-                    <tr>
-                        <td className='px-10 py-2'> Ethereum </td>
-                        <td className='px-10 py-2'> 321 </td>
-                    </tr>
-                    <tr>
-                        <td className='px-10 py-2'> Solana </td>
-                        <td className='px-10 py-2'> 123 </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-  )
-}
+  const [prices, setPrices] = useState<{ [pair: string]: number }>({});
 
-export default CryptoListings
+  const subscribe = (pairs: string[]) => {
+    const sockets: { [pair: string]: WebSocket } = {};
+
+    pairs.forEach((pair) => {
+      const ws = new WebSocket(
+        `wss://stream.binance.com:9443/ws/${pair.toLowerCase()}@trade`
+      );
+
+      ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        setPrices((prevPrices) => ({
+          ...prevPrices,
+          [pair]: parseFloat(data.p),
+        }));
+      };
+
+      sockets[pair] = ws;
+    });
+
+    return () => {
+      Object.values(sockets).forEach((ws) => {
+        ws.close();
+      });
+    };
+  };
+
+  useEffect(() => {
+    const unsubscribe = subscribe(cryptoList);
+    return unsubscribe;
+  }, []);
+
+  return (
+    <div className="h-[80vh] text-white py-20 px-10">
+      <h1 className="text-3xl font-bold "> Crypto Listings </h1>
+      <Table prices={prices}/>
+    </div>
+  );
+};
+
+export default CryptoListings;
