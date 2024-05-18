@@ -1,8 +1,6 @@
-interface Prices {
-    [pair: string]: number
-}
+import { PriceData } from "../Types/price";
 
-const Table = ({ prices }: { prices: Prices }) => {
+const Table = ({ prices }: { prices: { [pair: string]: PriceData } }) => {
   return (
     <div className="my-20 h-full flex flex-row items-start justify-center">
       <table className="w-[20vw] text-white-low">
@@ -13,12 +11,15 @@ const Table = ({ prices }: { prices: Prices }) => {
           </tr>
         </thead>
         <tbody>
-            {Object.entries(prices).map(([pair, price]) => (
-                <tr key={pair}>
-                    <td className="py-2"> {pair} </td>
-                    <td className="py-2"> $ {price.toFixed(2)} </td>
-                </tr>
-            ))}
+          {Object.entries(prices).map(([pair, data]) => (
+            <tr key={pair}>
+              <td className="px-4 py-2">{pair}</td>
+              <td className={`px-4 py-2 ${data.color}`}>
+                $ {data.price.toFixed(2)}
+              </td>
+              <td> <button className="bg-[#393939] px-2 py-1 rounded-sm"> Trade </button> </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
