@@ -4,5 +4,10 @@ export const cryptoList: string[] = [
     'SOLUSDT',
     'AVAXUSDT',
     'TRXUSDT',
-    'XRPUSDT'
+    'XRPUSDT',
+    'ADAUSDT',
+    'LINKUSDT',
+    'MATICUSDT',
+    'DOTUSDT',
+    'RNDRUSDT'
 ]

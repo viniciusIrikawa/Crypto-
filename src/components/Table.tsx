@@ -2,7 +2,7 @@ import { PriceData } from "../Types/price";
 
 const Table = ({ prices }: { prices: { [pair: string]: PriceData } }) => {
   return (
-    <div className="my-20 h-full flex flex-row items-start justify-center">
+    <div className="my-20 h-[40vh] w-fit flex flex-row items-start justify-center overflow-y-auto ">
       <table className="w-[20vw] text-white-low">
         <thead className="text-white-low text-xs">
           <tr className="font-bold-600 text-[#878787] text-left">
