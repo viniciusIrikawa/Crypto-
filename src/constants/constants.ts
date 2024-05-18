@@ -1,5 +1,8 @@
 export const cryptoList: string[] = [
     'BTCUSDT', 
     'ETHUSDT', 
-    'SOLUSDT'
+    'SOLUSDT',
+    'AVAXUSDT',
+    'TRXUSDT',
+    'XRPUSDT'
 ]

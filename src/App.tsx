@@ -11,7 +11,7 @@ function App() {
         <Navbar/>
         <Welcome/>
       </section>
-      <section>
+      <section className='bg-[#202020]'>
         <CryptoListings/>
       </section>
     </div>
