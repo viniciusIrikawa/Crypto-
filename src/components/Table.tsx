@@ -17,7 +17,9 @@ const Table = ({ prices }: { prices: { [pair: string]: PriceData } }) => {
               <td className={`px-4 py-2 ${data.color}`}>
                 $ {data.price.toFixed(2)}
               </td>
-              <td> <button className="bg-[#393939] px-2 py-1 rounded-sm"> Trade </button> </td>
+              <td> 
+                <a className="bg-[#393939] px-2 py-1 rounded-sm cursor-pointer" href={`/dashboard/${pair}`}> Trade </a>
+              </td>
             </tr>
           ))}
         </tbody>
