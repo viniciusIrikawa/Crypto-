@@ -36,7 +36,8 @@ const Home = () => {
             <TetherLabel />
           </div>
         </div>
-        <section className="bg-[#202020]">
+        <section className="bg-[#202020] py-20">
+          <h1 className="ml-24 text-3xl text-white-low font-bold "> Crypto Listings </h1>
           <CryptoListings />
         </section>
       </section>
