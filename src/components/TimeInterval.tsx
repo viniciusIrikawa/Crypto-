@@ -11,7 +11,7 @@ const TimeInterval = ({ timeInterval, setTimeInterval }: Type) => {
 
     return (
         <div className="flex flex-col w-2/3 mt-2">
-            <label className="text-white-low text-sm mb-2"> Time interval </label>
+            <label className="text-white-low text-sm mb-2" htmlFor="select-time-interval"> Time interval </label>
             <select name="time-interval" 
                     id="select-time-interval"
                     value={timeInterval} 

@@ -24,14 +24,13 @@ function TradingViewWidget() {
         id="tradingview_abc"
         title="TradingView Widget"
         style={{ width: "100%", height: "750px" }}
-        frameBorder="0"
         allowTransparency={true}
-        scrolling="no"
       ></iframe>
       <div className='px-5'>
         <CryptoListings />
         <TimeInterval setTimeInterval={setTimeInterval} timeInterval={timeInterval}/>
         <OrderButtons />
+        <a href="/" className='text-xs text-white-low text-center mt-10 block underline'> Go to homepage </a>
       </div>
     </div>
   );
