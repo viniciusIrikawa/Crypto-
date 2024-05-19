@@ -9,5 +9,7 @@ export const cryptoList: string[] = [
     'LINKUSDT',
     'MATICUSDT',
     'DOTUSDT',
-    'RNDRUSDT'
+    'RNDRUSDT',
+    'LTCUSDT',
+    'BCHUSDT',
 ]
