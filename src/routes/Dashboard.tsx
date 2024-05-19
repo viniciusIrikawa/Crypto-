@@ -2,6 +2,7 @@ import { useEffect, useRef, memo } from 'react';
 import CryptoListings from '../components/CryptoListings';
 import { useParams } from 'react-router-dom';
 import OrderButtons from '../components/OrderButtons';
+import TimeInterval from '../components/TimeInterval';
 
 function TradingViewWidget() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -37,8 +38,9 @@ function TradingViewWidget() {
   return (
     <div className="tradingview-widget-container flex" ref={container}>
       <div className="tradingview-widget-container__widget"></div>
-      <div>
+      <div className='px-5'>
         <CryptoListings/>
+        <TimeInterval/>
         <OrderButtons/>
       </div>
     </div>

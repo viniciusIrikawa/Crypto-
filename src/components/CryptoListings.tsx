@@ -49,7 +49,7 @@ const CryptoListings = () => {
   }, []);
 
   return (
-    <div className="h-[80vh] px-10">
+    <div className="">
       <Table prices={prices}/>
     </div>
   );
