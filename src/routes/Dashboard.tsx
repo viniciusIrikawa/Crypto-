@@ -1,7 +1,9 @@
+import React from 'react'
+
 const Dashboard = () => {
   return (
-    <div>Trading Dashboard Page</div>
+    <div className='text-white'>Dashboard page</div>
   )
 }
 
-export default Dashboard;
+export default Dashboard
