@@ -27,10 +27,10 @@ function TradingViewWidget() {
         allowTransparency={true}
       ></iframe>
       <div className='px-5'>
+        <a href="/" className='text-xs text-white-low text-center mt-5 block underline'> Go to homepage </a>
         <CryptoListings />
         <TimeInterval setTimeInterval={setTimeInterval} timeInterval={timeInterval}/>
         <OrderButtons />
-        <a href="/" className='text-xs text-white-low text-center mt-10 block underline'> Go to homepage </a>
       </div>
     </div>
   );
