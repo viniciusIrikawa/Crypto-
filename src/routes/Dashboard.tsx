@@ -1,8 +1,11 @@
 import { useEffect, useRef, memo } from 'react';
 import CryptoListings from '../components/CryptoListings';
+import { useParams } from 'react-router-dom';
 
 function TradingViewWidget() {
   const container = useRef<HTMLDivElement | null>(null);
+
+  const params = useParams();
 
   useEffect(
     () => {
@@ -14,7 +17,7 @@ function TradingViewWidget() {
         {
           "width": "100%",
           "height": "750",
-          "symbol": "BTCUSDT",
+          "symbol": "${params.symbol}",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "dark",
