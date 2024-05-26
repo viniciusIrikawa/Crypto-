@@ -11,8 +11,11 @@ export const initConnection = (setPrices: Dispatch<SetStateAction<Prices>>) => {
    
     socket.on("priceUpdate", (data: { pair: string, price: number }) => {
         setPrices((prevPrices: Prices) => {
-          const previousPrice = prevPrices[data.pair] ? prevPrices[data.pair].price : data.price;
-          const color = data.price > previousPrice ? 'text-green-500' : 'text-red-500';
+          const previousPrice = prevPrices[data.pair] ? 
+            prevPrices[data.pair].price : data.price;
+
+          const color = data.price > previousPrice ? 
+            'text-green-500' : 'text-red-500';
           return {
             ...prevPrices,
             [data.pair]: { price: data.price, color: color },
