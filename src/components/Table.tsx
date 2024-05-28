@@ -10,8 +10,8 @@ const Table = ({ prices }: { prices: { [pair: string]: PriceData } }) => {
       <table className="w-[20vw] text-white-low">
         <thead className="text-white-low text-xs">
           <tr className="font-bold-600 text-[#878787] text-left">
-            <th> Cryptocurrency </th>
-            <th> Price </th>
+            <th> Criptomoeda </th>
+            <th> Preço </th>
           </tr>
         </thead>
         <tbody>

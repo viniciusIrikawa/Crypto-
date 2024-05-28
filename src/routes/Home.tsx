@@ -11,16 +11,15 @@ const Home = () => {
         <Navbar />
         <div className="h-[90vh] flex justify-center items-center">
           <div className="text-white-low w-[30vw]  p-10 rounded-xl bg-gradient-to-b from-[#2c0336] to-[#610378db]">
-            <h2 className="text-2xl font-normal"> Home to </h2>
+            <h2 className="text-2xl font-normal"> Bem-vindo à </h2>
             <h2 className="font-bold text-6xl mb-5">
               Crypto <span className="text-crypto-purple text-6xl"> + </span>
             </h2>
             <p className="font-normal leading-5">
-              Explore, trade, and collect cryptocurrencies and NFT's on a secure
-              and intuitive platform. Join us today!
+              Explore, negocie e adquira criptomoedas e NFT's numa plataforma segura e intuitiva. Junte-se a nós!
             </p>
             <button className="px-10 py-2 mt-5 rounded-md bg-crypto-purple shadow shadow-crypto-purple uppercase font-bold text-sm">
-              Create Account
+              Criar conta
             </button>
           </div>
 
