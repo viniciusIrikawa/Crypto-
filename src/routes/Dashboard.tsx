@@ -3,12 +3,36 @@ import CryptoListings from '../components/CryptoListings';
 import { useParams } from 'react-router-dom';
 import OrderButtons from '../components/OrderButtons';
 import TimeInterval from '../components/TimeInterval';
+import { fetchCryptoData } from '../services/BinanceCryptoData';
+import { ICryptoData } from '../Types/cryptoData';
 
 function TradingViewWidget() {
   const container = useRef<HTMLIFrameElement | null>(null);
   const [timeInterval, setTimeInterval] = useState('D');
-
+  const [cryptoData, setCryptoData] = useState<ICryptoData>();
   const params = useParams();
+  
+  const fetchData = async () => {
+    try {
+      const crypto = await fetchCryptoData(params.symbol!);
+      setCryptoData(crypto);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  console.log(cryptoData);
+
+  useEffect(() => {
+    fetchData(); 
+
+    const intervalId = setInterval(() => {
+      fetchData(); 
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [params.symbol]);
+
 
   useEffect(() => {
     if (container.current) {
