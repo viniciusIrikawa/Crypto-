@@ -9,8 +9,8 @@ const Home = () => {
     <>
       <section className="bg-img-home bg-cover bg-center">
         <Navbar />
-        <div className="h-[90vh] flex justify-center items-center">
-          <div className="text-white-low w-[30vw]  p-10 rounded-xl bg-gradient-to-b from-[#2c0336] to-[#610378db]">
+        <div className="h-[90vh] flex md:flex-row flex-col justify-center items-center">
+          <div className="text-white-low md:w-[30vw] w-[90vw] p-10 rounded-xl bg-gradient-to-b from-[#2c0336] to-[#610378db]">
             <h2 className="text-2xl font-normal"> Bem-vindo à </h2>
             <h2 className="font-bold text-6xl mb-5">
               Crypto <span className="text-crypto-purple text-6xl"> + </span>
@@ -23,12 +23,12 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="relative w-1/2 ml-20 flex items-center justify-center">
+          <div className="relative md:w-1/2 w-full md:ml-20 flex items-center justify-center">
             <img
               src="/blockchain-vector.png"
               alt=""
-              width={650}
-              className="z-10"
+              width={0}
+              className="z-10 md:w-4/5 w-full"
             />
             <BitcoinLabel />
             <EthereumLabel />
