@@ -9,8 +9,8 @@ const Home = () => {
     <>
       <section className="bg-img-home bg-cover bg-center">
         <Navbar />
-        <div className="h-[90vh] flex md:flex-row flex-col justify-center items-center">
-          <div className="text-white-low md:w-[30vw] w-[90vw] p-10 rounded-xl bg-gradient-to-b from-[#2c0336] to-[#610378db]">
+        <div className="ms:h-[90vh] h-auto flex md:flex-row flex-col justify-center items-center">
+          <div className="text-white-low md:w-[30vw] md:mt-0 mt-10 w-[90vw] p-10 rounded-xl bg-gradient-to-b from-[#2c0336] to-[#610378db]">
             <h2 className="text-2xl font-normal"> Bem-vindo à </h2>
             <h2 className="font-bold text-6xl mb-5">
               Crypto <span className="text-crypto-purple text-6xl"> + </span>
