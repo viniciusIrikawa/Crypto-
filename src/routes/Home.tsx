@@ -36,8 +36,20 @@ const Home = () => {
           </div>
         </div>
         <section className="bg-[#202020] py-20">
-          <h1 className="ml-24 text-3xl text-white-low font-bold "> Crypto Listings </h1>
-          <CryptoListings />
+          <div className="md:ml-16 ml-3">
+            <h1 className="md:text-3xl text-2xl text-white-low font-bold"> Dashboard em tempo real </h1>
+            <p className="text-[#a1a1a1] mt-2 mb-5"> Visualize o gráfico e informações em tempo real das criptomoedas através do dashboard. </p>
+            {/* desktop view */}
+            <a href="/dashboard/BTCUSDT" className='md:inline-block hidden uppercase bg-crypto-purple px-7 py-2 rounded-sm bold text-white'> Trade! </a>
+          </div>
+          <div className="flex md:flex-row flex-col items-center justify-around mt-10">
+            <img src="/dashboard_desktop.jpg" alt="Dashboard desktop view" className="md:w-[70%] w-[95%] border-8 border-[#2e2e2e] rounded-lg"/>
+            <img src="/phone_mockup.png" alt="Dashboard mobile view" className="md:w-[15%] w-[30%] md:mt-0 mt-10 rounded-lg"/>
+          </div>
+          {/* mobile view */}
+          <div className="md:hidden w-full flex justify-center mt-16">
+            <a href="/dashboard/BTCUSDT" className='mx-3 uppercase bg-crypto-purple px-7 py-2 rounded-sm bold text-white md:ml-16'> Trade! </a>
+          </div>
         </section>
       </section>
     </>
