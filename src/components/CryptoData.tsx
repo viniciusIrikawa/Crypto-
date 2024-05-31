@@ -30,7 +30,7 @@ const CryptoData = () => {
 
     
   return (
-    <div className='flex justify-around mt-3'>
+    <div className='flex justify-around mt-3 md:mb-0 mb-5'>
         <div className=''>
             <p className='font-normal text-xs text-[#bfbfbf]'> Volume 24h</p>
             <small className='text-sm text-white-low'>  {cryptoData?.volume ? Number(cryptoData.volume).toFixed(2) : '-'} </small>

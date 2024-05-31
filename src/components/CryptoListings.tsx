@@ -11,9 +11,7 @@ const CryptoListings = () => {
   }, []);
 
   return (
-    <div className="">
       <Table prices={prices}/>
-    </div>
   );
 };
 

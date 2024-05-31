@@ -18,7 +18,11 @@ function TradingViewWidget() {
   }, [timeInterval, params.symbol]);
 
   return (
-    <div className="tradingview-widget-container flex">
+    <div className="tradingview-widget-container flex md:flex-row flex-col">
+      <div className='md:hidden block'>
+        <a href="/" className='text-xs text-white-low text-center mt-5 mb-10 block underline'> Voltar para a home </a>
+        <CryptoData/>
+      </div>
       <iframe
         ref={container}
         id="tradingview_abc"
@@ -27,8 +31,10 @@ function TradingViewWidget() {
         allowTransparency={true}
       ></iframe>
       <div className='px-5'>
+        <div className='md:block hidden'>
         <a href="/" className='text-xs text-white-low text-center mt-5 block underline'> Voltar para a home </a>
-        <CryptoData/>
+          <CryptoData/>
+        </div>
         <CryptoListings />
         <TimeInterval setTimeInterval={setTimeInterval} timeInterval={timeInterval}/>
         <OrderButtons />

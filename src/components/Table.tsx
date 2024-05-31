@@ -6,8 +6,8 @@ const Table = ({ prices }: { prices: { [pair: string]: PriceData } }) => {
   const { symbol } = useParams();
 
   return (
-    <div className="mt-10 h-[50vh] w-fit flex flex-row items-start justify-center overflow-y-auto">
-      <table className="w-[20vw] text-white-low">
+    <div className="mt-10 md:mb-0 mb-10 h-[50vh] md:w-fit w-full flex flex-row items-start justify-center overflow-y-auto">
+      <table className="md:w-[20vw] w-full text-white-low">
         <thead className="text-white-low text-xs">
           <tr className="font-bold-600 text-[#878787] text-left">
             <th> Criptomoeda </th>
