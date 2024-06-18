@@ -15,9 +15,7 @@ const CryptoData = () => {
         console.error(error);
       }
     };
-  
-    console.log(cryptoData);
-  
+
     useEffect(() => {
       fetchData(); 
   
@@ -36,11 +34,11 @@ const CryptoData = () => {
             <small className='text-sm text-white-low'>  {cryptoData?.volume ? Number(cryptoData.volume).toFixed(2) : '-'} </small>
         </div>
         <div className=''>
-            <p className='font-normal text-xs text-[#bfbfbf]'> Maior Preço 24h </p>
+            <p className='font-normal text-xs text-[#bfbfbf]'> High Price 24h </p>
             <small className='text-sm text-white-low'>  {cryptoData?.highPrice ? Number(cryptoData.highPrice).toFixed(2) : '-'} </small>
         </div>
         <div className=''>
-            <p className='font-normal text-xs text-[#bfbfbf]'> Menor Preço 24h </p>
+            <p className='font-normal text-xs text-[#bfbfbf]'> Low Price 24h </p>
             <small className='text-sm text-white-low'>  {cryptoData?.lowPrice ? Number(cryptoData.lowPrice).toFixed(2) : '-'} </small>
         </div>
     </div>

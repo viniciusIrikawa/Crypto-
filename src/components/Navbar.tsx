@@ -10,9 +10,9 @@ const Navbar = () => {
         </div>
         <h2 className='md:block hidden font-bold text-2xl'>Crypto <span className='text-crypto-purple text-2xl'>+</span></h2>
         <ul className='flex items-center text-sm cursor-pointer font-bold md:mt-0 mt-5'>
-          <li className='mx-3 uppercase md:text-sm text-xs'> Criptomoedas </li>
+          <li className='mx-3 uppercase md:text-sm text-xs'> Cryptocurrencies </li>
           <li className='mx-3 uppercase md:text-sm text-xs'> NFT's </li>
-          <li className='mx-3 uppercase md:text-sm text-xs'> Sobre </li>
+          <li className='mx-3 uppercase md:text-sm text-xs'> About </li>
           <li className='mx-3 uppercase md:text-sm text-xs'> Blog </li>
           {/* dektop view */}
           <li className='md:block hidden mx-3 uppercase bg-crypto-purple px-7 py-2 rounded-sm'> 

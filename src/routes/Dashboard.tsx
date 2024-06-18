@@ -20,7 +20,7 @@ function TradingViewWidget() {
   return (
     <div className="tradingview-widget-container flex md:flex-row flex-col">
       <div className='md:hidden block'>
-        <a href="/" className='text-xs text-white-low text-center mt-5 mb-10 block underline'> Voltar para a home </a>
+        <a href="/" className='text-xs text-white-low text-center mt-5 mb-10 block underline'> Go to home </a>
         <CryptoData/>
       </div>
       <iframe
@@ -32,7 +32,7 @@ function TradingViewWidget() {
       ></iframe>
       <div className='px-5'>
         <div className='md:block hidden'>
-        <a href="/" className='text-xs text-white-low text-center mt-5 block underline'> Voltar para a home </a>
+        <a href="/" className='text-xs text-white-low text-center mt-5 block underline'> Go to home </a>
           <CryptoData/>
         </div>
         <CryptoListings />

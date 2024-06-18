@@ -1,4 +1,3 @@
-import CryptoListings from "../components/CryptoListings";
 import Navbar from "../components/Navbar";
 import BitcoinLabel from "../components/cryptos/BitcoinLabel";
 import EthereumLabel from "../components/cryptos/EthereumLabel";
@@ -11,15 +10,15 @@ const Home = () => {
         <Navbar />
         <div className="ms:h-[90vh] h-auto flex md:flex-row flex-col justify-center items-center">
           <div className="text-white-low md:w-[30vw] md:mt-0 mt-10 w-[90vw] p-10 rounded-xl bg-gradient-to-b from-[#2c0336] to-[#610378db]">
-            <h2 className="text-2xl font-normal"> Bem-vindo à </h2>
+            <h2 className="text-2xl font-normal"> Welcome to </h2>
             <h2 className="font-bold text-6xl mb-5">
               Crypto <span className="text-crypto-purple text-6xl"> + </span>
             </h2>
             <p className="font-normal leading-5">
-              Explore, negocie e adquira criptomoedas e NFT's numa plataforma segura e intuitiva. Junte-se a nós!
+              Explore, trade and acquire cryptocurrencies and NFTs on a secure and intuitive platform. Join us!
             </p>
             <button className="px-10 py-2 mt-5 rounded-md bg-crypto-purple shadow shadow-crypto-purple uppercase font-bold text-sm">
-              Criar conta
+              Create Account
             </button>
           </div>
 
@@ -37,8 +36,8 @@ const Home = () => {
         </div>
         <section className="bg-[#202020] py-20">
           <div className="md:ml-16 ml-3">
-            <h1 className="md:text-3xl text-2xl text-white-low font-bold"> Dashboard em tempo real </h1>
-            <p className="text-[#a1a1a1] mt-2 mb-5"> Visualize o gráfico e informações em tempo real das criptomoedas através do dashboard. </p>
+            <h1 className="md:text-3xl text-2xl text-white-low font-bold"> Real-Time Dashboard </h1>
+            <p className="text-[#a1a1a1] mt-2 mb-5"> View real-time cryptocurrency charts and information via the dashboard. </p>
             {/* desktop view */}
             <a href="/dashboard/BTCUSDT" className='md:inline-block hidden uppercase bg-crypto-purple px-7 py-2 rounded-sm bold text-white'> Trade! </a>
           </div>
