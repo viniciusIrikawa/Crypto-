@@ -6,9 +6,9 @@ import { initConnection } from "../services/websocket";
 const CryptoListings = () => {
   const [prices, setPrices] = useState<{ [pair: string]: PriceData }>({});
 
-  useEffect(() => {
-    initConnection(setPrices);
-  }, []);
+  // useEffect(() => {
+  //   initConnection(setPrices);
+  // }, []);
 
   return (
       <Table prices={prices}/>
