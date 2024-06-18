@@ -7,7 +7,7 @@ interface Prices {
 }
 
 export const initConnection = (setPrices: Dispatch<SetStateAction<Prices>>) => {
-  const socket = io(`${import.meta.env.VITE_API_KEY}`);  
+  const socket = io(undefined);  
 
   socket.on("priceUpdate", (data: { pair: string, price: number, sentTimestamp: number }) => {
     //   const receiveTimestamp = Date.now();
